@@ -4,9 +4,11 @@ import {AppComponent} from './app.component';
 import {CoreModule} from './core/core.module';
 import {SharedModule} from './shared/shared.module';
 import {routes} from './app.routes';
-import {HomeModule} from "./modules/home/home.module";
-import {AuthModule} from "./modules/auth/auth.module";
-import {QuizModule} from './modules/quiz/quiz.module'
+import {HomeModule} from './modules/home/home.module';
+import {MatButtonModule, MatFormFieldModule, MatPaginatorModule} from '@angular/material';
+import {HttpClientModule, HttpClient} from '@angular/common/http';
+import {HttpModule} from '@angular/http';
+
 
 @NgModule({
   declarations: [
@@ -16,10 +18,15 @@ import {QuizModule} from './modules/quiz/quiz.module'
     BrowserModule,
     CoreModule,
     SharedModule,
+    HttpModule,
+    HttpClientModule,
     routes,
     HomeModule,
-    AuthModule,
-    QuizModule
+    MatFormFieldModule,
+    MatPaginatorModule,
+    MatButtonModule
+    // AuthModule,
+    // QuizModule
   ],
   providers: [],
   bootstrap: [AppComponent]

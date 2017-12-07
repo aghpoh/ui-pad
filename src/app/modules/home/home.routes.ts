@@ -1,13 +1,22 @@
 import {ModuleWithProviders} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {HomePageComponent} from "app/modules/home/pages/home.page";
-import {AuthenticatedGuard} from "../../shared/guards/authenticated.guard";
+import {HomePageComponent} from 'app/modules/home/pages/home.page';
+import {AddCustomerPageComponent} from './add-customer-page/add-customer-page.component';
 
 const routes: Routes = [
   {
     path: 'home',
     component: HomePageComponent,
-    canActivate: [AuthenticatedGuard]
+    pathMatch: 'full'
+  },
+  {
+    path: 'add',
+    component: AddCustomerPageComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: 'add/:id',
+    component: AddCustomerPageComponent
   }
 ];
 

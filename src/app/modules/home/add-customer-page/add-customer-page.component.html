@@ -1,0 +1,40 @@
+<section>
+
+  <h1>Add customer</h1>
+  <div class="line"></div>
+
+  <div class="row collapse">
+
+    <article class="large-12 small-12 columns">
+      <mat-card class="card row">
+
+        <mat-form-field class="large-12 columns">
+          <input matInput #input maxlength="10" type="number" [(ngModel)]="customer.id" placeholder="Enter id">
+        </mat-form-field>
+
+
+        <mat-form-field class="large-12 columns" hintLabel="Max 20 characters">
+          <input matInput [(ngModel)]="customer.name"  #input1 maxlength="10" placeholder="Enter name">
+          <mat-hint align="end">{{input1.value?.length || 0}}/20</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field class="large-12 columns" hintLabel="Max 12 characters">
+          <input matInput [(ngModel)]="customer.idnp"  #input2 maxlength="10" placeholder="IDNP">
+          <mat-hint align="end">{{input2.value?.length || 0}}/20</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field class="large-12 columns">
+          <mat-select [(ngModel)]="customer.type"  placeholder="Customer Type">
+            <mat-option value="INDIVIDUAL">INDIVIDUAL</mat-option>
+            <mat-option value="COMPANY">COMPANY</mat-option>
+          </mat-select>
+          <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+        </mat-form-field>
+
+        <button mat-button (click)="onSave(customer)" class="btn-submit">Save</button>
+      </mat-card>
+    </article>
+
+
+  </div>
+</section>

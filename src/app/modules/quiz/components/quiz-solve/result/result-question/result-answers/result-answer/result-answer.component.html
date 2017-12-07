@@ -1,8 +1,0 @@
-<p [class.correct]="answer.selected && answer.correct "
-   [class.incorrect]="answer.selected && !answer.correct ">
-
-  <i *ngIf="answer.correct"  class="material-icons">done</i>
-  <i *ngIf="!answer.correct"  class="material-icons">clear</i>
-  {{answer.text}}
-
-</p>

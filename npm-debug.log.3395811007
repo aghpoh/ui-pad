@@ -1,0 +1,269 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '--save',
+1 verbose cli   '@angular/animationsnpm',
+1 verbose cli   'install',
+1 verbose cli   '--save',
+1 verbose cli   '@angular/material',
+1 verbose cli   '@angular/cdk' ]
+2 info using npm@3.10.10
+3 info using node@v6.11.4
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly fetchPackageMetaData @angular/animationsnpm
+8 silly fetchPackageMetaData install
+9 silly fetchPackageMetaData @angular/material@^2.0.0-beta.8
+10 silly fetchPackageMetaData @angular/cdk@^2.0.0-beta.8
+11 silly fetchNamedPackageData @angular/material
+12 silly mapToRegistry name @angular/material
+13 silly mapToRegistry scope (from package name) @angular
+14 verbose mapToRegistry no registry URL found in name for scope @angular
+15 silly mapToRegistry using default registry
+16 silly mapToRegistry registry https://registry.npmjs.org/
+17 silly mapToRegistry data Result {
+17 silly mapToRegistry   raw: '@angular/material',
+17 silly mapToRegistry   scope: '@angular',
+17 silly mapToRegistry   escapedName: '@angular%2fmaterial',
+17 silly mapToRegistry   name: '@angular/material',
+17 silly mapToRegistry   rawSpec: '',
+17 silly mapToRegistry   spec: 'latest',
+17 silly mapToRegistry   type: 'tag' }
+18 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fmaterial
+19 silly fetchNamedPackageData @angular/cdk
+20 silly mapToRegistry name @angular/cdk
+21 silly mapToRegistry scope (from package name) @angular
+22 verbose mapToRegistry no registry URL found in name for scope @angular
+23 silly mapToRegistry using default registry
+24 silly mapToRegistry registry https://registry.npmjs.org/
+25 silly mapToRegistry data Result {
+25 silly mapToRegistry   raw: '@angular/cdk',
+25 silly mapToRegistry   scope: '@angular',
+25 silly mapToRegistry   escapedName: '@angular%2fcdk',
+25 silly mapToRegistry   name: '@angular/cdk',
+25 silly mapToRegistry   rawSpec: '',
+25 silly mapToRegistry   spec: 'latest',
+25 silly mapToRegistry   type: 'tag' }
+26 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fcdk
+27 silly fetchNamedPackageData @angular/animationsnpm
+28 silly mapToRegistry name @angular/animationsnpm
+29 silly mapToRegistry scope (from package name) @angular
+30 verbose mapToRegistry no registry URL found in name for scope @angular
+31 silly mapToRegistry using default registry
+32 silly mapToRegistry registry https://registry.npmjs.org/
+33 silly mapToRegistry data Result {
+33 silly mapToRegistry   raw: '@angular/animationsnpm',
+33 silly mapToRegistry   scope: '@angular',
+33 silly mapToRegistry   escapedName: '@angular%2fanimationsnpm',
+33 silly mapToRegistry   name: '@angular/animationsnpm',
+33 silly mapToRegistry   rawSpec: '',
+33 silly mapToRegistry   spec: 'latest',
+33 silly mapToRegistry   type: 'tag' }
+34 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fanimationsnpm
+35 silly fetchNamedPackageData install
+36 silly mapToRegistry name install
+37 silly mapToRegistry using default registry
+38 silly mapToRegistry registry https://registry.npmjs.org/
+39 silly mapToRegistry data Result {
+39 silly mapToRegistry   raw: 'install',
+39 silly mapToRegistry   scope: null,
+39 silly mapToRegistry   escapedName: 'install',
+39 silly mapToRegistry   name: 'install',
+39 silly mapToRegistry   rawSpec: '',
+39 silly mapToRegistry   spec: 'latest',
+39 silly mapToRegistry   type: 'tag' }
+40 silly mapToRegistry uri https://registry.npmjs.org/install
+41 verbose request uri https://registry.npmjs.org/@angular%2fanimationsnpm
+42 verbose request no auth needed
+43 info attempt registry request try #1 at 12:07:37 AM
+44 verbose request id 5ea39d4c4fad9f3d
+45 http request GET https://registry.npmjs.org/@angular%2fanimationsnpm
+46 verbose request uri https://registry.npmjs.org/install
+47 verbose request no auth needed
+48 info attempt registry request try #1 at 12:07:37 AM
+49 http request GET https://registry.npmjs.org/install
+50 verbose request uri https://registry.npmjs.org/@angular%2fmaterial
+51 verbose request no auth needed
+52 info attempt registry request try #1 at 12:07:37 AM
+53 verbose etag W/"5a2850cd-c5a1"
+54 verbose lastModified Wed, 06 Dec 2017 20:19:25 GMT
+55 http request GET https://registry.npmjs.org/@angular%2fmaterial
+56 verbose request uri https://registry.npmjs.org/@angular%2fcdk
+57 verbose request no auth needed
+58 info attempt registry request try #1 at 12:07:37 AM
+59 verbose etag W/"5a2850c7-3a3c"
+60 verbose lastModified Wed, 06 Dec 2017 20:19:19 GMT
+61 http request GET https://registry.npmjs.org/@angular%2fcdk
+62 http 200 https://registry.npmjs.org/install
+63 verbose headers { 'content-type': 'application/json; charset=UTF-8',
+63 verbose headers   server: 'UploadServer',
+63 verbose headers   'cache-control': 'max-age=300',
+63 verbose headers   'last-modified': 'Thu, 16 Nov 2017 22:24:25 GMT',
+63 verbose headers   etag: '"5a0e1019-11fdf"',
+63 verbose headers   'content-length': '73695',
+63 verbose headers   'accept-ranges': 'bytes',
+63 verbose headers   date: 'Wed, 06 Dec 2017 22:07:38 GMT',
+63 verbose headers   via: '1.1 varnish',
+63 verbose headers   age: '1613',
+63 verbose headers   connection: 'keep-alive',
+63 verbose headers   'x-served-by': 'cache-hhn1540-HHN',
+63 verbose headers   'x-cache': 'HIT',
+63 verbose headers   'x-cache-hits': '1',
+63 verbose headers   'x-timer': 'S1512598058.040360,VS0,VE1',
+63 verbose headers   vary: 'Accept-Encoding, Accept' }
+64 silly get cb [ 200,
+64 silly get   { 'content-type': 'application/json; charset=UTF-8',
+64 silly get     server: 'UploadServer',
+64 silly get     'cache-control': 'max-age=300',
+64 silly get     'last-modified': 'Thu, 16 Nov 2017 22:24:25 GMT',
+64 silly get     etag: '"5a0e1019-11fdf"',
+64 silly get     'content-length': '73695',
+64 silly get     'accept-ranges': 'bytes',
+64 silly get     date: 'Wed, 06 Dec 2017 22:07:38 GMT',
+64 silly get     via: '1.1 varnish',
+64 silly get     age: '1613',
+64 silly get     connection: 'keep-alive',
+64 silly get     'x-served-by': 'cache-hhn1540-HHN',
+64 silly get     'x-cache': 'HIT',
+64 silly get     'x-cache-hits': '1',
+64 silly get     'x-timer': 'S1512598058.040360,VS0,VE1',
+64 silly get     vary: 'Accept-Encoding, Accept' } ]
+65 verbose get saving install to /Users/petrubujac/.npm/registry.npmjs.org/install/.cache.json
+66 verbose correctMkdir /Users/petrubujac/.npm correctMkdir not in flight; initializing
+67 http 304 https://registry.npmjs.org/@angular%2fmaterial
+68 verbose headers { date: 'Wed, 06 Dec 2017 22:07:38 GMT',
+68 verbose headers   via: '1.1 varnish',
+68 verbose headers   'cache-control': 'max-age=0',
+68 verbose headers   etag: 'W/"5a2850cd-c5a1"',
+68 verbose headers   age: '0',
+68 verbose headers   connection: 'keep-alive',
+68 verbose headers   'x-served-by': 'cache-hhn1521-HHN',
+68 verbose headers   'x-cache': 'MISS',
+68 verbose headers   'x-cache-hits': '0',
+68 verbose headers   'x-timer': 'S1512598058.041685,VS0,VE176',
+68 verbose headers   vary: 'Accept-Encoding' }
+69 silly get cb [ 304,
+69 silly get   { date: 'Wed, 06 Dec 2017 22:07:38 GMT',
+69 silly get     via: '1.1 varnish',
+69 silly get     'cache-control': 'max-age=0',
+69 silly get     etag: 'W/"5a2850cd-c5a1"',
+69 silly get     age: '0',
+69 silly get     connection: 'keep-alive',
+69 silly get     'x-served-by': 'cache-hhn1521-HHN',
+69 silly get     'x-cache': 'MISS',
+69 silly get     'x-cache-hits': '0',
+69 silly get     'x-timer': 'S1512598058.041685,VS0,VE176',
+69 silly get     vary: 'Accept-Encoding' } ]
+70 verbose etag https://registry.npmjs.org/@angular%2fmaterial from cache
+71 verbose get saving @angular/material to /Users/petrubujac/.npm/registry.npmjs.org/_40angular_252fmaterial/.cache.json
+72 verbose correctMkdir /Users/petrubujac/.npm correctMkdir not in flight; initializing
+73 http 304 https://registry.npmjs.org/@angular%2fcdk
+74 verbose headers { date: 'Wed, 06 Dec 2017 22:07:38 GMT',
+74 verbose headers   via: '1.1 varnish',
+74 verbose headers   'cache-control': 'max-age=0',
+74 verbose headers   etag: 'W/"5a2850c7-3a3c"',
+74 verbose headers   age: '0',
+74 verbose headers   connection: 'keep-alive',
+74 verbose headers   'x-served-by': 'cache-hhn1525-HHN',
+74 verbose headers   'x-cache': 'MISS',
+74 verbose headers   'x-cache-hits': '0',
+74 verbose headers   'x-timer': 'S1512598058.046182,VS0,VE644',
+74 verbose headers   vary: 'Accept-Encoding' }
+75 silly get cb [ 304,
+75 silly get   { date: 'Wed, 06 Dec 2017 22:07:38 GMT',
+75 silly get     via: '1.1 varnish',
+75 silly get     'cache-control': 'max-age=0',
+75 silly get     etag: 'W/"5a2850c7-3a3c"',
+75 silly get     age: '0',
+75 silly get     connection: 'keep-alive',
+75 silly get     'x-served-by': 'cache-hhn1525-HHN',
+75 silly get     'x-cache': 'MISS',
+75 silly get     'x-cache-hits': '0',
+75 silly get     'x-timer': 'S1512598058.046182,VS0,VE644',
+75 silly get     vary: 'Accept-Encoding' } ]
+76 verbose etag https://registry.npmjs.org/@angular%2fcdk from cache
+77 verbose get saving @angular/cdk to /Users/petrubujac/.npm/registry.npmjs.org/_40angular_252fcdk/.cache.json
+78 verbose correctMkdir /Users/petrubujac/.npm correctMkdir not in flight; initializing
+79 http 404 https://registry.npmjs.org/@angular%2fanimationsnpm
+80 verbose headers { 'content-type': 'application/json',
+80 verbose headers   'cache-control': 'max-age=0',
+80 verbose headers   'content-length': '21',
+80 verbose headers   'accept-ranges': 'bytes',
+80 verbose headers   date: 'Wed, 06 Dec 2017 22:07:38 GMT',
+80 verbose headers   via: '1.1 varnish',
+80 verbose headers   age: '0',
+80 verbose headers   connection: 'keep-alive',
+80 verbose headers   'x-served-by': 'cache-hhn1545-HHN',
+80 verbose headers   'x-cache': 'MISS',
+80 verbose headers   'x-cache-hits': '0',
+80 verbose headers   'x-timer': 'S1512598058.038020,VS0,VE731' }
+81 silly get cb [ 404,
+81 silly get   { 'content-type': 'application/json',
+81 silly get     'cache-control': 'max-age=0',
+81 silly get     'content-length': '21',
+81 silly get     'accept-ranges': 'bytes',
+81 silly get     date: 'Wed, 06 Dec 2017 22:07:38 GMT',
+81 silly get     via: '1.1 varnish',
+81 silly get     age: '0',
+81 silly get     connection: 'keep-alive',
+81 silly get     'x-served-by': 'cache-hhn1545-HHN',
+81 silly get     'x-cache': 'MISS',
+81 silly get     'x-cache-hits': '0',
+81 silly get     'x-timer': 'S1512598058.038020,VS0,VE731' } ]
+82 silly fetchPackageMetaData Error: Not found : @angular/animationsnpm
+82 silly fetchPackageMetaData     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:302:12)
+82 silly fetchPackageMetaData     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:290:14)
+82 silly fetchPackageMetaData     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:210:14)
+82 silly fetchPackageMetaData     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:187:22)
+82 silly fetchPackageMetaData     at emitTwo (events.js:106:13)
+82 silly fetchPackageMetaData     at Request.emit (events.js:191:7)
+82 silly fetchPackageMetaData     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1048:10)
+82 silly fetchPackageMetaData     at emitOne (events.js:96:13)
+82 silly fetchPackageMetaData     at Request.emit (events.js:188:7)
+82 silly fetchPackageMetaData     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:969:12)
+82 silly fetchPackageMetaData  error for @angular/animationsnpm { Error: Not found : @angular/animationsnpm
+82 silly fetchPackageMetaData     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:302:12)
+82 silly fetchPackageMetaData     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:290:14)
+82 silly fetchPackageMetaData     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:210:14)
+82 silly fetchPackageMetaData     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:187:22)
+82 silly fetchPackageMetaData     at emitTwo (events.js:106:13)
+82 silly fetchPackageMetaData     at Request.emit (events.js:191:7)
+82 silly fetchPackageMetaData     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1048:10)
+82 silly fetchPackageMetaData     at emitOne (events.js:96:13)
+82 silly fetchPackageMetaData     at Request.emit (events.js:188:7)
+82 silly fetchPackageMetaData     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:969:12)
+82 silly fetchPackageMetaData   pkgid: '@angular/animationsnpm',
+82 silly fetchPackageMetaData   statusCode: 404,
+82 silly fetchPackageMetaData   code: 'E404' }
+83 silly rollbackFailedOptional Starting
+84 silly rollbackFailedOptional Finishing
+85 silly runTopLevelLifecycles Finishing
+86 silly install printInstalled
+87 verbose stack Error: Not found : @angular/animationsnpm
+87 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:302:12)
+87 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:290:14)
+87 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:210:14)
+87 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:187:22)
+87 verbose stack     at emitTwo (events.js:106:13)
+87 verbose stack     at Request.emit (events.js:191:7)
+87 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1048:10)
+87 verbose stack     at emitOne (events.js:96:13)
+87 verbose stack     at Request.emit (events.js:188:7)
+87 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:969:12)
+88 verbose statusCode 404
+89 verbose pkgid @angular/animationsnpm
+90 verbose cwd /Users/petrubujac/Documents/UTM/Licence/quiz-angular
+91 error Darwin 17.2.0
+92 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "--save" "@angular/animationsnpm" "install" "--save" "@angular/material" "@angular/cdk"
+93 error node v6.11.4
+94 error npm  v3.10.10
+95 error code E404
+96 error 404 Not found : @angular/animationsnpm
+97 error 404
+98 error 404 '@angular/animationsnpm' is not in the npm registry.
+99 error 404 You should bug the author to publish it (or use the name yourself!)
+100 error 404 Note that you can also install from a
+101 error 404 tarball, folder, http url, or git url.
+102 verbose exit [ 1, true ]

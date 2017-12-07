@@ -51,12 +51,18 @@ section {
   display: inline;
 }
 
-  md-card, .card {
+  mat-card, .card {
+    mat-form-field {
+      width: 50%;
+      margin: em(10) auto 0;
+      display: block;
+    }
     margin: em(10);
+    padding: em(20);
     background: $white;
-    padding: em(10);
     button{
       padding: 0 em(10);
+      color: white;
     }
   }
 }

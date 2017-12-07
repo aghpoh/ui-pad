@@ -1,49 +1,64 @@
 <section>
 
-  <h1>Choose your way</h1>
+  <h1>List customers</h1>
   <div class="line"></div>
 
   <div class="row collapse">
 
-    <article class="medium-4 small-12 columns">
-      <md-card class="card">
-        <img src="/assets/images/home/quizzes-icon.png" alt="quizzes"/>
-        <h2>Quizzes</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          A accusantium assumenda beatae culpa deleniti error in, ipsam labore modi necessitatibus odit perferendis qui,
-          rerum, sunt totam vel velit! Libero, rerum.
-        </p>
-        <a class="btn" routerLink="/quizzes">Learn more</a>
-      </md-card>
+    <article class="large-12 small-12 columns">
+      <mat-card class="card">
+
+        <div class="example-header">
+          <mat-form-field>
+            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+          </mat-form-field>
+
+          <button mat-button (click)="addNew()" color="primary">Add new</button>
+        </div>
+
+        <mat-table #table [dataSource]="dataSource">
+
+          <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef> Id. </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+          </ng-container>
+
+          <!-- Weight Column -->
+          <ng-container matColumnDef="idnp">
+            <mat-header-cell *matHeaderCellDef> IDNP </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.idnp}} </mat-cell>
+          </ng-container>
+
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="type">
+            <mat-header-cell *matHeaderCellDef> Type  </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.type}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="actions">
+            <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              <button mat-button class="btn-submit" (click)="onEditNavigate(element.id)">Edit</button>
+              <button mat-button  class="btn-cancel" (click)="onDelete()">Delete</button>
+            </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+        <mat-paginator #paginator
+                       [pageSize]="10"
+                       [pageSizeOptions]="[5, 10, 20]">
+        </mat-paginator>
+      </mat-card>
     </article>
 
-    <article class="medium-4 small-12 columns">
-      <md-card class="card">
-        <img src="/assets/images/home/hackathons-icon.png" alt="hackathons"/>
-        <h2>Results</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          A accusantium assumenda beatae culpa deleniti error in, ipsam labore modi necessitatibus odit perferendis qui,
-          rerum, sunt totam vel velit! Libero, rerum.
-        </p>
-        <a routerLink="/user-results" class="btn">Learn more</a>
-      </md-card>
-    </article>
-
-    <article class="medium-4 small-12 columns">
-      <md-card class="card">
-        <img src="/assets/images/home/algoplay-icon.png" alt="algoplay"/>
-        <h2>Categories</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          A accusantium assumenda beatae culpa deleniti error in, ipsam labore modi necessitatibus odit perferendis qui,
-          rerum, sunt totam vel velit! Libero, rerum.
-        </p>
-
-        <a routerLink="/categories" class="btn" >Learn more</a>
-      </md-card>
-    </article>
 
   </div>
 </section>

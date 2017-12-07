@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {AuthService} from "../../../modules/auth/auth.service";
 
 @Component({
   selector: 'qz-navbar',
@@ -8,20 +7,15 @@ import {AuthService} from "../../../modules/auth/auth.service";
 })
 export class NavbarComponent {
 
-  /**
-   * @param {AuthService} authService
-   */
-  constructor(private authService: AuthService) {
+  constructor() {
   }
 
   public onLogout(): void {
 
-    this.authService.logout();
   }
 
-  public isAuthenticated (): boolean {
+  public isAuthenticated (): any {
 
-    return this.authService.isAuthenticated();
   }
 
 
