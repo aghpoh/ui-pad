@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Router} from '@angular/router';
-import {BaseRequestOptions, RequestOptions} from '@angular/http';
+import {HomeService} from '../home.service';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Customer} from '../model/customer';
 
 @Component({
   selector: 'app-add-customer-page',
@@ -10,30 +10,40 @@ import {BaseRequestOptions, RequestOptions} from '@angular/http';
 export class AddCustomerPageComponent implements OnInit {
 
   customer: Customer;
+  editStatus = false;
 
-  constructor(private http: HttpClient, private router: Router) {
+  constructor(private homeService: HomeService, private route: Router, private router: ActivatedRoute) {
     this.customer = new Customer();
+
+    this.router.params.subscribe(params => {
+      this.customer.id = params['id'];
+    });
+
+    if (this.customer.id != null) {
+      this.editStatus = true;
+      this.homeService.getCustomerById(this.customer.id).subscribe(
+        result => {
+          this.customer = result;
+        }
+      );
+    }
   }
 
   ngOnInit() {
   }
 
   onSave(customer: Customer) {
-    console.log(customer);
-    this.http.post('http://localhost:8765/api/customers', customer).subscribe(
-      data => {
-        this.router.navigateByUrl('/');
+    this.homeService.saveCustomer(customer).subscribe(result => {
+        this.route.navigateByUrl('/');
+      }
+    );
+  }
+
+  onEdit(customer: Customer) {
+    this.homeService.editCustomer(customer).subscribe(result => {
+        this.route.navigateByUrl('/');
       }
     );
   }
 }
 
-export class Customer {
-  public id: number;
-  public name: string;
-  public idnp: string;
-  public type: string;
-
-  constructor() {
-  }
-}

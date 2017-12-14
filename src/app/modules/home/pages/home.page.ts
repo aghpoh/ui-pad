@@ -20,14 +20,11 @@ export class HomePageComponent implements AfterViewInit {
   dataSource = new MatTableDataSource<Element>(this.customers);
 
   constructor(private router: Router, private homeService: HomeService, private http: HttpClient) {
-    // this.customers = this.homeService.getCustomers();
-
-    this.http.get('http://localhost:8765/api/customers').subscribe(
+    this.customers = this.homeService.getCustomers().subscribe(
       data => {
         this.customers = data;
         this.dataSource.data = this.customers;
-      }
-    );
+      });
   }
 
   ngAfterViewInit(): void {
@@ -46,8 +43,12 @@ export class HomePageComponent implements AfterViewInit {
     this.router.navigateByUrl('/add/' + id);
   }
 
-  onDelete() {
-
+  onDelete(id: number) {
+    this.homeService.deleteCustomer(id).subscribe(
+      data => {
+        console.log(data);
+      }
+    );
   }
 
   addNew() {

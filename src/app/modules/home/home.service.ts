@@ -2,8 +2,7 @@ import {Injectable} from '@angular/core';
 import 'rxjs/add/operator/toPromise';
 import {Observable} from 'rxjs/Rx';
 import {ApiService} from 'app/core/services/api.service';
-import {HttpClientModule} from '@angular/common/http';
-import {HttpModule} from '@angular/http';
+import {Customer} from './model/customer';
 
 
 @Injectable()
@@ -23,7 +22,7 @@ export class HomeService {
    */
   public getCustomers(): Observable<any> {
     return Observable.create(observer => {
-      this.api.get('customers').subscribe(result => {
+      this.api.get(this.apiPath).subscribe(result => {
         observer.next(result);
       }, err => observer.error(err));
     });
@@ -46,6 +45,38 @@ export class HomeService {
     return ++page;
   }
 
+  public saveCustomer(customer: Customer) {
+
+    return Observable.create(observer => {
+      this.api.post(this.apiPath, customer).subscribe(
+        data => {
+          observer.next(data);
+        }, err => observer.error(err));
+    });
+  }
+
+  public editCustomer(customer: Customer) {
+
+    return Observable.create(observer => {
+      this.api.put(this.apiPath + '/' + customer.id, customer).subscribe(
+        data => {
+          observer.next(data);
+        }, err => observer.error(err));
+    });
+  }
+
+  public deleteCustomer(customerId: number) {
+
+    const path = this.apiPath + '/' + customerId;
+
+    return Observable.create(observer => {
+      this.api.delete(path).subscribe(data => {
+          observer.next(data);
+        }, err => observer.error(err));
+    });
+  }
+
+
   /**
    *
    * @param {number} page
@@ -59,21 +90,5 @@ export class HomeService {
         observer.next(result);
       }, err => observer.error(err));
     });
-  }
-
-
-  /**
-   * @param {number} id
-   *
-   * @returns {Observable<any>}
-   */
-  public deleteCustomer(id: number): Observable<any> {
-
-    return Observable.create(observer => {
-      this.api.delete(this.apiPath + '/' + id).subscribe(result => {
-        observer.next(result);
-      }, err => observer.error(err));
-    });
-
   }
 }

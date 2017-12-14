@@ -3,7 +3,6 @@ import {Response, Headers} from '@angular/http';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 import {Observable} from 'rxjs/Rx';
-import {KeyTransformer} from '../../shared/helper/key.transformer';
 
 @Injectable()
 export class ApiService {
@@ -22,20 +21,6 @@ export class ApiService {
   }
 
   /**
-   * @returns {Headers}
-   */
-  public createAuthorizationHeader() {
-    const headers = new Headers();
-    const key = 'authentication';
-
-    if (localStorage.getItem(key) !== null) {
-      headers.append(key, localStorage.getItem(key));
-    }
-
-    return headers;
-  }
-
-  /**
    * @param {string} path
    *
    * @returns {Observable<any>}
@@ -43,8 +28,6 @@ export class ApiService {
   public get(path: string): Observable<any> {
 
     const endpoint = `${this.apiEndpoint}/${path}`;
-    console.log(endpoint);
-    // let headers = this.createAuthorizationHeader();
 
     return this.http
       .get(`${endpoint}`)
@@ -60,8 +43,6 @@ export class ApiService {
   public post(path: string, body: any): Observable<any> {
 
     const endpoint = `${this.apiEndpoint}/${path}`;
-    // let headers = this.createAuthorizationHeader();
-    // body = KeyTransformer.transformToSnakeCase(body);
 
     return this.http
       .post(`${endpoint}`, body)
@@ -77,11 +58,18 @@ export class ApiService {
   public put(path: string, body: any): Observable<any> {
 
     const endpoint = `${this.apiEndpoint}/${path}`;
-    // let headers = this.createAuthorizationHeader();
-    // body = KeyTransformer.transformToSnakeCase(body);
-
     return this.http
       .put(`${endpoint}`, body)
+      .catch(this.handleError.bind(this));
+  }
+
+  public delete(path: string): Observable<any> {
+
+    console.log('ON DELETE SERVICE API ' + path);
+
+    const endpoint = `${this.apiEndpoint}/${path}`;
+    return this.http
+      .delete(`${endpoint}`)
       .catch(this.handleError.bind(this));
   }
 
@@ -94,48 +82,10 @@ export class ApiService {
   public patch(path: string, body: any): Observable<any> {
 
     const endpoint = `${this.apiEndpoint}/${path}`;
-    // let headers = this.createAuthorizationHeader();
-    // body = KeyTransformer.transformToSnakeCase(body);
 
     return this.http
       .patch(`${endpoint}`, body)
       .catch(this.handleError.bind(this));
-  }
-
-  /**
-   * @param {string} path
-   *
-   * @returns {Observable<any>}
-   */
-  public delete(path: string): Observable<any> {
-
-    const endpoint = `${this.apiEndpoint}/${path}`;
-    // let headers = this.createAuthorizationHeader();
-
-    return this.http
-      .delete(`${endpoint}`)
-      .catch(this.handleError.bind(this));
-  }
-
-  /**
-   * @param {Response} res
-   * @param {boolean} toJSON
-   *
-   * @returns {any}
-   */
-  private extractData(res: any, toJSON: boolean = true) {
-
-    if (!toJSON) {
-
-      return res;
-    }
-
-    try {
-      return res.json()
-    }
-    catch (e) {
-      return {};
-    }
   }
 
   /**

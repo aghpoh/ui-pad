@@ -9,6 +9,8 @@ import {
 } from '@angular/material';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
+import {HomeService} from './home.service';
+import {ApiService} from '../../core/services/api.service';
 
 
 @NgModule({
@@ -28,6 +30,10 @@ import {FormsModule} from '@angular/forms';
   declarations: [
     HomePageComponent,
     AddCustomerPageComponent
+  ],
+  providers: [
+    HomeService,
+    ApiService
   ]
 })
 export class HomeModule {

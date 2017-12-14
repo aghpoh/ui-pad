@@ -31,7 +31,8 @@
           <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
         </mat-form-field>
 
-        <button mat-button (click)="onSave(customer)" class="btn-submit">Save</button>
+        <button *ngIf="!editStatus" mat-button (click)="onSave(customer)" class="btn-submit">Save</button>
+        <button *ngIf="editStatus" mat-button (click)="onEdit(customer)" class="btn-submit">Edit</button>
       </mat-card>
     </article>
 
