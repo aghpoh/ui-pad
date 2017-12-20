@@ -19,9 +19,10 @@ export class AddCustomerPageComponent implements OnInit {
       this.customer.id = params['id'];
     });
 
+
     if (this.customer.id != null) {
       this.editStatus = true;
-      this.homeService.getCustomerById(this.customer.id).subscribe(
+      this.homeService.getCustomerById(this.customer).subscribe(
         result => {
           this.customer = result;
         }

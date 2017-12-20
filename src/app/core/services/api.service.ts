@@ -28,7 +28,7 @@ export class ApiService {
   public get(path: string): Observable<any> {
 
     const endpoint = `${this.apiEndpoint}/${path}`;
-
+    console.log(endpoint);
     return this.http
       .get(`${endpoint}`)
       .catch(this.handleError.bind(this));

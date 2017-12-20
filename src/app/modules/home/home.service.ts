@@ -28,18 +28,16 @@ export class HomeService {
     });
   }
 
-  /**
-   *
-   * @param {number} id
-   * @returns {any}
-   */
-  public getCustomerById(id: number) {
+  public getCustomerById(customer: Customer) {
+
     return Observable.create(observer => {
-      this.api.get(this.apiPath + '/' + id).subscribe(result => {
+      this.api.get(this.apiPath + '/' + customer.id).subscribe(result => {
+        console.log(result);
         observer.next(result);
       }, err => observer.error(err));
     });
   }
+
 
   public incrementPage(page: number) {
     return ++page;

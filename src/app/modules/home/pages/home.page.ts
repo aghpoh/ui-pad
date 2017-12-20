@@ -19,7 +19,8 @@ export class HomePageComponent implements AfterViewInit {
   customers: any;
   dataSource = new MatTableDataSource<Element>(this.customers);
 
-  constructor(private router: Router, private homeService: HomeService, private http: HttpClient) {
+  constructor(private router: Router, private homeService: HomeService) {
+    console.log('here');
     this.customers = this.homeService.getCustomers().subscribe(
       data => {
         this.customers = data;
@@ -28,14 +29,18 @@ export class HomePageComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-
+    this.customers = this.homeService.getCustomers().subscribe(
+      data => {
+        this.customers = data;
+        this.dataSource.data = this.customers;
+      });
     console.log(this.customers);
     this.dataSource.paginator = this.paginator;
   }
 
   applyFilter(filterValue: string) {
-    filterValue = filterValue.trim(); // Remove whitespace
-    filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
+    filterValue = filterValue.trim();
+    filterValue = filterValue.toLowerCase();
     this.dataSource.filter = filterValue;
   }
 
@@ -46,7 +51,11 @@ export class HomePageComponent implements AfterViewInit {
   onDelete(id: number) {
     this.homeService.deleteCustomer(id).subscribe(
       data => {
-        console.log(data);
+        this.homeService.getCustomers().subscribe(
+          data1 => {
+            this.customers = data1;
+            this.dataSource.data = this.customers;
+          });
       }
     );
   }
